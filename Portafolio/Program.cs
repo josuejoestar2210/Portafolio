@@ -8,7 +8,7 @@ builder.Services.AddControllersWithViews();
 // Servicios personalizados
 builder.Services.AddTransient<IRepositorioProyectos, RepositorioProyectos>();
 
-builder.Services.AddTransient<IServicioEmail, ServicioEmailMailKit>();
+builder.Services.AddHttpClient<IServicioEmail, ServicioEmailResend>();
 
 var app = builder.Build();
 
