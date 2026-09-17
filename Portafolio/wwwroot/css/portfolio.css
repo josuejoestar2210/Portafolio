@@ -1,17 +1,25 @@
 ﻿/* ============================================
-   PORTAFOLIO - ESTILOS PRINCIPALES
+   PORTAFOLIO - ESTILOS PRINCIPALES (TEMA OSCURO)
    ============================================ */
 
 /* Variables de color */
 :root {
-    --primary-color: #0d6efd;
-    --secondary-color: #6c757d;
-    --dark-color: #212529;
-    --light-color: #f8f9fa;
-    --accent-color: #0a58ca;
-    --gradient-start: #0d6efd;
-    --gradient-end: #0a58ca;
+    --primary-color: #3b82f6;
+    --secondary-color: #94a3b8;
+    --dark-color: #f1f5f9; /* ahora es el color de TEXTO principal (claro) */
+    --light-color: #0f172a; /* ahora es el fondo de sección (oscuro) */
+    --accent-color: #2563eb;
+    --gradient-start: #1e3a8a;
+    --gradient-end: #0f172a;
+    --card-bg: #1a2236;
+    --card-border: rgba(255, 255, 255, 0.08);
+    --bg-body: #0b1120;
+    --text-muted: #94a3b8;
 }
+
+/* ============================================
+   BASE / STICKY FOOTER
+   ============================================ */
 
 html, body {
     height: 100%;
@@ -21,22 +29,66 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: var(--bg-body);
+    color: var(--dark-color);
 }
 
 main[role="main"] {
     flex: 1 0 auto;
 }
 
-footer {
+.footer-oscuro {
     flex-shrink: 0;
+    background-color: #070b16;
+    color: var(--text-muted);
+    font-size: 0.85rem;
 }
+
+/* ============================================
+   NAVBAR CENTRALIZADO TIPO PILL
+   ============================================ */
+
+.header-flotante {
+    display: flex;
+    justify-content: center;
+    padding: 20px 15px;
+    background-color: transparent;
+}
+
+.nav-pill {
+    display: flex;
+    gap: 4px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 50px;
+    padding: 6px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-pill-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 8px 18px;
+    border-radius: 50px;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+}
+
+    .nav-pill-link:hover {
+        color: white;
+        background: rgba(255, 255, 255, 0.1);
+    }
 
 /* ============================================
    SECCIÓN PRESENTACIÓN
    ============================================ */
 
 .presentacion-container {
-    padding: 40px 20px 30px;
+    padding: 20px 20px 40px;
     background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
     color: white;
     position: relative;
@@ -50,9 +102,9 @@ footer {
         left: 0;
         right: 0;
         bottom: 0;
-        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.05)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
         background-size: cover;
-        opacity: 0.3;
+        opacity: 0.5;
     }
 
 .presentacion-content {
@@ -74,25 +126,25 @@ footer {
     font-weight: 400;
     line-height: 1.5;
     margin-bottom: 25px;
-    opacity: 0.95;
+    opacity: 0.85;
     animation: fadeInUp 1s ease-out 0.2s backwards;
 }
 
 #foto {
-    width: 140px;
-    height: 140px;
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
     object-fit: cover;
-    border: 5px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-    margin: 20px 0;
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    margin: 0 0 20px 0;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     animation: fadeInUp 1s ease-out 0.4s backwards;
 }
 
     #foto:hover {
         transform: scale(1.05);
-        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
     }
 
 .dotnet-section {
@@ -104,16 +156,95 @@ footer {
     max-width: 280px;
     width: 100%;
     height: auto;
-    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3)) brightness(0.95);
     animation: fadeIn 1s ease-out 0.6s backwards;
 }
+
+/* ============================================
+   BADGE "DISPONIBLE PARA TRABAJAR"
+   ============================================ */
+
+.badge-disponible {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.85rem;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 6px 14px;
+    border-radius: 50px;
+    margin-left: 12px;
+    vertical-align: middle;
+}
+
+    .badge-disponible i {
+        font-size: 0.55rem;
+        color: #4ade80;
+        animation: pulso 2s infinite;
+    }
+
+@keyframes pulso {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+}
+
+@media (max-width: 576px) {
+    .badge-disponible {
+        display: flex;
+        width: fit-content;
+        margin: 12px auto 0;
+    }
+}
+
+/* ============================================
+   ENLACES SOCIALES (LinkedIn, GitHub, Email)
+   ============================================ */
+
+.enlaces-sociales {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 25px;
+    animation: fadeInUp 1s ease-out 0.5s backwards;
+}
+
+.enlace-social {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.25s ease;
+}
+
+    .enlace-social i {
+        font-size: 1rem;
+    }
+
+    .enlace-social:hover {
+        background: rgba(255, 255, 255, 0.18);
+        color: white;
+        transform: translateY(-2px);
+    }
 
 /* ============================================
    SECCIÓN BIENVENIDA
    ============================================ */
 
 .seccion-bienvenida-wrapper {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    background: linear-gradient(135deg, #111c33 0%, #0b1120 100%);
     padding: 40px 20px;
     position: relative;
     overflow: hidden;
@@ -126,17 +257,18 @@ footer {
         right: -10%;
         width: 500px;
         height: 500px;
-        background: rgba(255, 255, 255, 0.05);
+        background: rgba(59, 130, 246, 0.06);
         border-radius: 50%;
     }
 
 .seccion-bienvenida {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(10px);
+    border: 1px solid var(--card-border);
     border-radius: 15px;
     padding: 30px 30px;
-    color: white;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    color: var(--dark-color);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
     max-width: 900px;
     margin: 0 auto;
     position: relative;
@@ -152,7 +284,7 @@ footer {
     .seccion-bienvenida p {
         font-size: 1rem;
         line-height: 1.6;
-        opacity: 0.95;
+        color: var(--text-muted);
     }
 
 /* ============================================
@@ -161,7 +293,7 @@ footer {
 
 .habilidades-section {
     padding: 50px 20px;
-    background-color: #ffffff;
+    background-color: var(--light-color);
     position: relative;
 }
 
@@ -182,17 +314,18 @@ footer {
 }
 
 .habilidad-card {
-    background: white;
+    background: var(--card-bg);
     border-radius: 15px;
     padding: 25px 20px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--card-border);
 }
 
     .habilidad-card:hover {
         transform: translateY(-10px);
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+        border-color: rgba(59, 130, 246, 0.3);
     }
 
     .habilidad-card i {
@@ -210,7 +343,7 @@ footer {
     }
 
     .habilidad-card > p {
-        color: var(--secondary-color);
+        color: var(--text-muted);
         line-height: 1.5;
         margin-bottom: 15px;
         font-size: 0.95rem;
@@ -245,7 +378,7 @@ footer {
 
     .habilidad-card ul li {
         padding: 5px 0;
-        color: var(--dark-color);
+        color: var(--text-muted);
         position: relative;
         padding-left: 22px;
         font-size: 0.9rem;
@@ -260,6 +393,112 @@ footer {
         }
 
 /* ============================================
+   SECCIÓN EXPERIENCIA LABORAL
+   ============================================ */
+
+.experiencia-section {
+    padding: 50px 20px;
+    background-color: var(--light-color);
+}
+
+.experiencia-titulo {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: var(--dark-color);
+}
+
+    .experiencia-titulo i {
+        color: var(--primary-color);
+    }
+
+.experiencia-timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    padding-left: 30px;
+    border-left: 3px solid var(--primary-color);
+}
+
+.experiencia-item {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+    .experiencia-item:last-child {
+        margin-bottom: 0;
+    }
+
+.experiencia-punto {
+    position: absolute;
+    left: -39px;
+    top: 8px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    border: 3px solid var(--bg-body);
+    box-shadow: 0 0 0 3px var(--primary-color);
+}
+
+.experiencia-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 15px;
+    padding: 25px 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+    .experiencia-card:hover {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        transform: translateY(-3px);
+        border-color: rgba(59, 130, 246, 0.3);
+    }
+
+.experiencia-fecha {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #93c5fd;
+    background: rgba(59, 130, 246, 0.15);
+    padding: 4px 12px;
+    border-radius: 50px;
+    margin-bottom: 10px;
+}
+
+.experiencia-puesto {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-bottom: 4px;
+}
+
+.experiencia-empresa {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.experiencia-lista {
+    margin: 0;
+    padding-left: 20px;
+}
+
+    .experiencia-lista li {
+        color: var(--text-muted);
+        font-size: 0.92rem;
+        line-height: 1.6;
+        margin-bottom: 8px;
+    }
+
+        .experiencia-lista li::marker {
+            color: var(--primary-color);
+        }
+
+/* ============================================
    SECCIÓN CONTACTO
    ============================================ */
 
@@ -267,9 +506,10 @@ footer {
     max-width: 600px;
     margin: 60px auto;
     padding: 40px;
-    background: white;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
     border-radius: 20px;
-    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
 }
 
     .contacto-container h1 {
@@ -287,15 +527,24 @@ footer {
     }
 
     .contacto-container .form-control {
+        background-color: #0f172a;
         border-radius: 10px;
-        border: 2px solid #e9ecef;
+        border: 2px solid var(--card-border);
         padding: 12px 16px;
+        color: var(--dark-color);
         transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
 
+        .contacto-container .form-control::placeholder {
+            color: var(--text-muted);
+            opacity: 0.6;
+        }
+
         .contacto-container .form-control:focus {
+            background-color: #0f172a;
+            color: var(--dark-color);
             border-color: var(--primary-color);
-            box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+            box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.2);
         }
 
     .contacto-container .btn-primary {
@@ -331,7 +580,7 @@ footer {
 
     .proyectos-section > p {
         font-size: 1rem;
-        color: var(--secondary-color);
+        color: var(--text-muted);
         margin-bottom: 30px;
     }
 
@@ -340,12 +589,14 @@ footer {
     border-radius: 12px;
     overflow: hidden;
     transition: all 0.3s ease;
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
 }
 
     .proyecto-card:hover {
         transform: translateY(-8px);
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+        border-color: rgba(59, 130, 246, 0.3);
     }
 
     .proyecto-card .card-img-top {
@@ -371,13 +622,13 @@ footer {
 
     .proyecto-card .card-text {
         font-size: 0.9rem;
-        color: var(--secondary-color);
+        color: var(--text-muted);
         line-height: 1.5;
     }
 
     .proyecto-card .card-footer {
         background-color: transparent;
-        border-top: 1px solid rgba(0, 0, 0, 0.05);
+        border-top: 1px solid var(--card-border);
         padding: 15px 20px;
     }
 
@@ -445,8 +696,8 @@ footer {
     }
 
     #foto {
-        width: 120px;
-        height: 120px;
+        width: 100px;
+        height: 100px;
     }
 
     .seccion-bienvenida {
@@ -484,4 +735,75 @@ footer {
     .proyecto-card .card-img-top {
         height: 160px;
     }
+
+    .experiencia-timeline {
+        padding-left: 20px;
+    }
+
+    .experiencia-card {
+        padding: 20px 18px;
+    }
+
+    .experiencia-punto {
+        left: -29px;
+    }
+}
+
+
+/* ============================================
+   BOTÓN "VER CAPTURAS" Y MODAL DEL CARRUSEL
+   ============================================ */
+
+.btn-ver-capturas {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 15px;
+    background: rgba(59, 130, 246, 0.12);
+    color: #93c5fd;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    transition: all 0.25s ease;
+}
+
+    .btn-ver-capturas:hover {
+        background: var(--primary-color);
+        color: white;
+        border-color: var(--primary-color);
+    }
+
+/* Modal en tema oscuro */
+#modalHotelVictoria .modal-content {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    color: var(--dark-color);
+}
+
+#modalHotelVictoria .modal-header {
+    border-bottom: 1px solid var(--card-border);
+}
+
+#modalHotelVictoria .modal-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Carrusel */
+#carouselHotelVictoria .carousel-inner {
+    border-radius: 0 0 15px 15px;
+    overflow: hidden;
+    background-color: #060a14;
+}
+
+#carouselHotelVictoria .carousel-item img {
+    max-height: 70vh;
+    object-fit: contain;
+    background-color: #060a14;
+}
+
+#carouselHotelVictoria .carousel-control-prev,
+#carouselHotelVictoria .carousel-control-next {
+    width: 8%;
 }

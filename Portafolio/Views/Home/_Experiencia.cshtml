@@ -1,0 +1,95 @@
+﻿<section class="experiencia-section" id="experiencia">
+    <div class="container">
+        <h2 class="experiencia-titulo">
+            <i class="bi bi-briefcase-fill me-2"></i>Experiencia Laboral
+        </h2>
+
+        <div class="experiencia-timeline">
+
+            <div class="experiencia-item">
+                <div class="experiencia-punto"></div>
+                <div class="experiencia-card">
+                    <div class="experiencia-fecha">Agosto 2025 – Febrero 2026</div>
+                    <h3 class="experiencia-puesto">Desarrollador Web .NET</h3>
+                    <p class="experiencia-empresa">Hotel Victoria · Sayán, Huaura</p>
+
+                    <ul class="experiencia-lista">
+                        <li>
+                            Construcción de un Sistema Integral de Gestión Hotelera con ASP.NET Core 8 y SQL Server,
+                            cubriendo reservas, clientes, habitaciones, ventas, inventario y control de gastos.
+                        </li>
+                        <li>
+                            Arquitectura de la solución en capas (Service Layer, DTOs, Dependency Injection)
+                            aplicando principios SOLID para mantener el código escalable y mantenible.
+                        </li>
+                        <li>
+                            Integración de autenticación y autorización con ASP.NET Core Identity, implementando
+                            control de acceso basado en roles (RBAC) y políticas de seguridad.
+                        </li>
+                        <li>
+                            Optimización del rendimiento de consultas con Entity Framework Core mediante
+                            Lazy/Eager Loading, LINQ avanzado, paginación e índices en SQL Server.
+                        </li>
+                        <li>
+                            Generación de reportes en PDF con QuestPDF y exportación a Excel con ClosedXML,
+                            integrados al flujo operativo del sistema.
+                        </li>
+                        <li>
+                            Automatización de la actualización de estados de habitaciones y reservas mediante
+                            programación asincrónica (async/await), reduciendo intervención manual.
+                        </li>
+                    </ul>
+
+                    <button type="button" class="btn-ver-capturas" data-bs-toggle="modal" data-bs-target="#modalHotelVictoria">
+                        <i class="bi bi-images me-2"></i>Ver capturas del sistema
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- MODAL CON CARRUSEL DE CAPTURAS -->
+    <div class="modal fade" id="modalHotelVictoria" tabindex="-1" aria-labelledby="modalHotelVictoriaLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalHotelVictoriaLabel">Sistema de Gestión Hotelera - Hotel Victoria</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <div id="carouselHotelVictoria" class="carousel slide" data-bs-ride="false">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselHotelVictoria" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Captura 1"></button>
+                            <button type="button" data-bs-target="#carouselHotelVictoria" data-bs-slide-to="1" aria-label="Captura 2"></button>
+                            <button type="button" data-bs-target="#carouselHotelVictoria" data-bs-slide-to="2" aria-label="Captura 3"></button>
+                            <button type="button" data-bs-target="#carouselHotelVictoria" data-bs-slide-to="3" aria-label="Captura 4"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="~/imagenes/hotel-victoria-1.png" class="d-block w-100" alt="Dashboard del sistema - Hotel Victoria">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/imagenes/hotel-victoria-2.png" class="d-block w-100" alt="Gestión de reservas - Hotel Victoria">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/imagenes/hotel-victoria-3.png" class="d-block w-100" alt="Gestión de habitaciones - Hotel Victoria">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/imagenes/hotel-victoria-4.png" class="d-block w-100" alt="Reportes del sistema - Hotel Victoria">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselHotelVictoria" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Anterior</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselHotelVictoria" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Siguiente</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

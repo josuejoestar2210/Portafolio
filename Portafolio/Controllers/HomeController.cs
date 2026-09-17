@@ -34,6 +34,11 @@ namespace Portafolio.Controllers
             return View(proyectos);
         }
 
+        public IActionResult Experiencia()
+        {
+            return View();
+        }
+
         [HttpGet]
         public IActionResult Contacto()
         {
